@@ -1,0 +1,28 @@
+[submodule "qemu"]
+	path = tools/qemu
+	url = ../../rover2024/qemu
+	branch = lorelei
+
+[submodule "blink"]
+	path = tools/blink
+	url = ../../rover2024/blink
+	branch = lorelei
+
+[submodule "box64"]
+	path = tools/box64
+	url = ../../rover2024/box64
+	branch = lorelei
+
+[submodule "lorelei"]
+	path = src/lorelei
+	url = ../../rover2024/lorelei
+
+[submodule "glibc"]
+	path = libs/glibc
+	url = ../../lorelei-project/glibc
+	branch = lorelei
+
+[submodule "SDL"]
+	path = libs/SDL
+	url = ../../rover2024/SDL
+	branch = lorelei-patch
