@@ -8,9 +8,18 @@ fi
 SOURCE_DIR="$1"
 INSTALL_DIR="$2"
 
+BUILD_DIR="$SOURCE_DIR/build"
+
+# Configure
 cd $SOURCE_DIR
 ./configure \
     --prefix=$INSTALL_DIR \
     LDLIBS=-ldl
-make -j$(nproc)
-make install
+
+# Build
+mkdir $BUILD_DIR
+cd $BUILD_DIR
+make -C $SOURCE_DIR -j$(nproc)
+
+# Install
+make -C $SOURCE_DIR install

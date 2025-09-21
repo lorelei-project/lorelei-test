@@ -29,5 +29,5 @@ make install
 1. /usr/include/linux/errno.h:1:10: fatal error: asm/errno.h: No such file or directory
 
 ```bash
-ln -s /usr/include/x86_64-linux-gnu/asm /usr/include/asm
+ln -s /usr/include/x86_64-linux-gnu/asm asm
 ```

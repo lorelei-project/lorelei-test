@@ -8,7 +8,10 @@ fi
 SOURCE_DIR="$1"
 INSTALL_DIR="$2"
 
+BUILD_DIR="$SOURCE_DIR/build"
+
 # Configure
+cd $BUILD_DIR
 $SOURCE_DIR/configure \
     --prefix=$INSTALL_DIR \
     --target-list=x86_64-linux-user

@@ -16,3 +16,16 @@ else
     exit 0
 fi
 
+# workaround for missing "asm" include dir
+ln -s /usr/include/x86_64-linux-gnu/asm $SOURCE_DIR/asm
+
+$SOURCE_DIR/configure \
+    --prefix=$INSTALL_DIR \
+    --enable-add-ons \
+    --disable-profile \
+    --with-headers=/usr/include \
+    --with-binutils=/usr/bin \
+    --disable-sanity-checks \
+    --enable-shared
+bear make -j16
+make install

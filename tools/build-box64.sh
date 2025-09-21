@@ -20,11 +20,17 @@ else
     echo "ERROR: architecture $ARCH is not supported!!!"
 fi
 
-cmake -S $SOURCE_DIR -B . -G Ninja $ARCH_FLAG \
+BUILD_DIR="$SOURCE_DIR/build"
+
+# Configure
+cmake -S $SOURCE_DIR -B $BUILD_DIR -G Ninja $ARCH_FLAG \
     -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR \
     -DCMAKE_BUILD_TYPE=RelWithDebInfo \
     -DNO_LIB_INSTALL=TRUE \
     -DNO_CONF_INSTALL=TRUE
 
-cmake --build . --target all
-cmake --build . --target install
+# Build
+cmake --build $BUILD_DIR --target all
+
+# Install
+cmake --build $BUILD_DIR --target install
